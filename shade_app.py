@@ -126,7 +126,7 @@ class MyApp(QMainWindow):
         Get the results when the user doesn't have a Spotify account.
         '''
 
-        if self.result_yes == '' or self.username == '':
+        if self.result_no == '' or self.username == '':
             result = '**Please enter a valid Twitter Handle first!'
             self.ui.resultWindow.setText(result)
         else:
@@ -182,6 +182,7 @@ class MyApp(QMainWindow):
         else:
             tweet_list = self.get_tweets(api)
             if isinstance(tweet_list, str):
+                self.result_no, self.result_yes = '', ''
                 result = """<html><body>
                             <p>**Error while extracting tweets from this Twitter handle!</p> 
                             <p>Please try another Twitter handle or check your Internet connection.</p>
@@ -237,6 +238,7 @@ class MyApp(QMainWindow):
                 except (watson_developer_cloud.watson_service.WatsonApiException, requests.exceptions.ConnectionError) as e:
                     self.ui.resultWindow.setText('')
                     self.ui.resultWindow2.setText('')
+                    self.result_no, self.result_yes = '', ''
                     if str(e).startswith("('Connection aborted"):
                         result = """<html><body>
                                 <p>**Please check your Internet connection!</p>
@@ -250,6 +252,7 @@ class MyApp(QMainWindow):
             else:
                 self.ui.resultWindow.setText('')
                 self.ui.resultWindow2.setText('')
+                self.result_no, self.result_yes = '', ''
                 result = """<html><body>
                             <p>No tweets found for Twitter handle <strong>{name}</strong> in the last 24 hours.</p>
                             </body></html>"""
