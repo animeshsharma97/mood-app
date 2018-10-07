@@ -4,7 +4,7 @@ A Desktop app to suggest a playlist of songs based on user's mood derived from t
 
 In this project, we have created a Desktop app where a user enters their twitter handle, then we extract their tweets for the last 24 hours and pass each tweet to the IBM Watson Natural Language Understanding Service to extract the emotion of those tweets, i.e. joy, sadness, anger, fear, disgust. Then we extract the dominant emotion of all the tweets. After that, we suggest a curated playlist of songs to the user based on their dominant mood.
 
-To run this app, first of all you must install all the dependencies in your virtual environment. For that, run the command:
+To run this app, first of all you must install all the dependencies in your virtual environment. For that, run the following commands:
 
 ```
 virtualenv -p python3 venv
@@ -27,6 +27,9 @@ Run that file to see some awesome results.
 
 # A preview of our UI:
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=U6X4-l83jgI
-" target="_blank"><img src="http://img.youtube.com/vi/U6X4-l83jgI/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=klpPTeLnX60
+" target="_blank"><img src="http://img.youtube.com/vi/klpPTeLnX60/0.jpg" 
 alt="The video could not be loaded." width="500" height="300" border="10" /></a>
+
+# Undertaking
+We undertake that all our work is original and has not been copied or plagiarised from anywhere.
